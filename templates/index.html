@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1> Hello World </h1>
 <p> My name is {{ first_name }} </p>
 <p> {{ stuff|safe }} </p>
@@ -7,3 +11,5 @@
 	{{ topping }}<br>
 {% endfor %}
 {{ favourite_pizza.0 }}
+
+{% endblock %}
