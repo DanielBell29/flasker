@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-dismissible fade show
+        {% if 'success' in message %}alert-success
+        {% elif 'danger' in message %}alert-danger
+        {% endif %}
+        " role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+{% if name %}
+	<h1> Hello {{ name|title }} </h1>
+	<br>
+	<p id="demo"> Your account has been created. </p>
+	<table class="table table-hover table-bordered table-striped">
+				{% for our_user in our_users %}
+					<tr>
+						<td> {{ our_user.id }}: {{ our_user.name|capitalize }} - {{ our_user.email }} </td>
+					</tr>
+				{% endfor %}
+			</table>
+
+{% else %}
+	<h1> User List: </h1>
+	<br>
+	<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+		<form method="POST">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			{{ form.name.label(class="form-label") }}
+			{{ form.name(class="form-control") }}
+		</div>
+		<div class="form-group">
+			{{ form.email.label(class="form-label") }}
+			{{ form.email(class="form-control") }}
+		</div>
+		<br>
+			{{ form.submit(class="btn btn-primary") }}
+		</form>
+	</div>
+		<br>
+			<table class="table table-hover table-bordered table-striped">
+				{% for our_user in our_users %}
+					<tr>
+						<td> {{ our_user.id }}: {{ our_user.name|capitalize }} - {{ our_user.email }} </td>
+					</tr>
+				{% endfor %}
+			</table>
+
+{% endif %}
+
+{% endblock %}
