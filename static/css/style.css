@@ -20,3 +20,77 @@ body
 	display: flex;
 	flex-direction: column;
 }
+
+.post-container 
+{
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+    cursor: pointer;
+    background-color: #f0f0f0; /* Set the initial background color to the hover color */
+}
+
+.post-container:hover 
+{
+    background-color: #dbd8e3; /* Change this to the desired static color */
+}
+
+.navbar 
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #a2a8d3 !important; /* Background color for the navbar */
+}
+
+body 
+{
+    padding-top: 70px;
+    background-color: #e7eaf6;
+}
+
+.navbar-brand,
+.nav-link 
+{
+    color: #fff !important;
+    transition: color 0.3s ease; /* Smooth transition effect for text color */
+}
+
+.navbar-brand:hover,
+.nav-link:hover 
+{
+    color: #000 !important; /* Change this to the desired hover color for text */
+}
+
+.navbar-toggler-icon 
+{
+    background-color: #fff; /* Color for the toggler icon */
+}
+
+.navbar-nav 
+{
+    margin-right: 0; /* Adjust the margin as needed */
+}
+
+.ml-auto 
+{
+    margin-left: auto; /* Align the ml-auto content to the right */
+}
+
+.form-control 
+{
+    background-color: #fff; /* Background color for the search input */
+}
+
+.btn-outline-success 
+{
+    color: #28a745; /* Text color for the search button */
+    border-color: #28a745; /* Border color for the search button */
+}
+
+.btn-outline-success:hover 
+{
+    color: #fff; /* Text color for the search button on hover */
+    background-color: #28a745; /* Background color for the search button on hover */
+}
