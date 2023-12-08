@@ -13,23 +13,28 @@
     </div>
 {% endfor %}
 
-	<h1> Login... </h1>
-	<br>
+<h1> Login... </h1>
+<br>
 
-	<div class="shadow p-3 mb-5 posts rounded">
-		<form method="POST">
-		{{ form.hidden_tag() }}
-		<div class="form-group">
-			{{ form.username.label(class="form-label") }}
-			{{ form.username(class="form-control") }}
-		</div>
-		<div class="form-group">
-			{{ form.password.label(class="form-label") }}
-			{{ form.password(class="form-control") }}
-		</div>
-		<br>
-			{{ form.submit(class="btn btn-primary") }}
-		</form>
-	</div>
+<div class="shadow p-3 mb-5 posts rounded">
+    <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control") }}
+    </div>
+    <br>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+
+{# Debugging: Print flashed messages #}
+{% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
 
 {% endblock %}
