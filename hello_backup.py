@@ -196,7 +196,7 @@ class Users(db.Model, UserMixin):
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Do some password stuff
-    password_hash = db.Column(db.String(128))
+    password_hash = db.Column(db.String(500))
     @property 
     def password(self):
     	raise AttributeError('password is not a readable attribute!')

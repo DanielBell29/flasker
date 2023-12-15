@@ -19,7 +19,9 @@
 {% for post in posts %}
 <div class="shadow p-3 posts mb-5 rounded post-container" onclick="window.location='{{ url_for('post', id=post.id) }}';">
     <h3> {{ post.slug }} - {{ post.title }} </h3>
-    <small> By: {{ post.poster.name | title }} <br>
+    {% if post.poster %}
+        <small> By: {{ post.poster.name | title }} <br>
+    {% endif %}
     {{ post.date_posted }} </small> <br> <br>
 
     <a href="{{ url_for('post', id=post.id) }}" class="btn btn-outline-success btn-sm"> View Post </a>

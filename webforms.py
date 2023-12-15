@@ -35,15 +35,15 @@ class NamerForm(FlaskForm):
 
 # Create a Form Class
 class UserForm(FlaskForm):
-	name = StringField("Name", validators=[DataRequired()])
-	username = StringField("Username", validators=[DataRequired()])
-	email = StringField("Email", validators=[DataRequired()])
-	favourite_color = StringField("Favourite Color")
-	about_author = TextAreaField("About author")
-	password_hash = PasswordField('Password', validators=[DataRequired(), EqualTo('password_hash2', message='Passwords must match!')])
-	password_hash2 = PasswordField('Confirm password', validators=[DataRequired()])
-	profile_pic = FileField("Profile pic")
-	submit = SubmitField("Submit")
+    name = StringField("Name", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()])
+    email = StringField("Email", validators=[DataRequired()])
+    favourite_color = StringField("Favourite Color")
+    password_hash = PasswordField('Password', validators=[DataRequired(), EqualTo('password_hash2', message='Passwords must match!')])
+    password_hash2 = PasswordField('Confirm password', validators=[DataRequired()])
+    submit = SubmitField("Submit")
+    about_author = TextAreaField("About author")
+    profile_pic = FileField("Profile pic")
 
 
 class PasswordForm(FlaskForm):
